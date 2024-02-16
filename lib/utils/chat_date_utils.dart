@@ -14,7 +14,7 @@ class ChatDateUtils {
   }
 
   // 채팅방 내의 날짜 표시
-  static String formatDatTime(DateTime dateTime) {
+  static String formatDateTime(DateTime dateTime) {
     return DateFormat('yyyy년 MM월 dd일 EEEE').format(dateTime);
   }
 

@@ -40,10 +40,12 @@ class _ChatInputState extends State<ChatInput> {
       padding: const EdgeInsets.all(8.0),
       child: Row(
         children: [
-          TextField(
-            controller: _controller,
-            decoration: const InputDecoration(hintText: 'Type a message ...'),
-            enabled: !widget.isLoading,
+          Expanded(
+            child: TextField(
+              controller: _controller,
+              decoration: const InputDecoration(hintText: 'Type a message ...'),
+              enabled: !widget.isLoading,
+            ),
           ),
           widget.isLoading
               ? Container(
