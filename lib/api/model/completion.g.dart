@@ -25,6 +25,9 @@ CompletionResponse _$CompletionResponseFromJson(Map<String, dynamic> json) =>
       json['id'] as String,
       json['created'] as int,
       json['model'] as String,
+      (json['choices'] as List<dynamic>)
+          .map((e) => ChoiceModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$CompletionResponseToJson(CompletionResponse instance) =>
@@ -32,6 +35,7 @@ Map<String, dynamic> _$CompletionResponseToJson(CompletionResponse instance) =>
       'id': instance.id,
       'created': instance.created,
       'model': instance.model,
+      'choices': instance.choices,
     };
 
 ChoiceModel _$ChoiceModelFromJson(Map<String, dynamic> json) => ChoiceModel(

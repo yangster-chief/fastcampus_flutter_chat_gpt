@@ -30,8 +30,9 @@ class CompletionResponse {
   final String id;
   final int created;
   final String model;
+  final List<ChoiceModel> choices;
 
-  const CompletionResponse(this.id, this.created, this.model);
+  const CompletionResponse(this.id, this.created, this.model, this.choices);
 
   factory CompletionResponse.fromJson(Map<String, dynamic> json) =>
       _$CompletionResponseFromJson(json);
